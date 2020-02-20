@@ -1,0 +1,24 @@
+{
+  "name": "starlette",
+  "version": "0.4.5",
+  "description": "Dynamic CSS variables of all conceivable UI colors for any Adobe application",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "revamp": "node ./revamp.js",
+    "revampall": "node ./revamp.js AEFT/gradient && node ./revamp.js PPRO/gradient && node ./revamp.js AUDT/gradient && node ./revamp.js ILST/darkest && node ./revamp.js ILST/dark && node ./revamp.js ILST/lightest && node ./revamp.js ILST/light && node ./revamp.js FLPR/darkest && node ./revamp.js FLPR/dark && node ./revamp.js FLPR/lightest && node ./revamp.js FLPR/light && node ./revamp.js IDSN/darkest && node ./revamp.js IDSN/dark && node ./revamp.js IDSN/lightest && node ./revamp.js IDSN/light && node ./revamp.js PHXS/darkest && node ./revamp.js PHXS/dark && node ./revamp.js PHXS/lightest && node ./revamp.js PHXS/light && node ./revamp.js IDSN/darkest && node ./revamp.js IDSN/dark && node ./revamp.js IDSN/lightest && node ./revamp.js IDSN/light"
+  },
+  "keywords": [],
+  "author": "Thomas Scharstein II <tom@inventsable.cc>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Inventsable/starlette.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Inventsable/starlette/issues"
+  },
+  "homepage": "https://github.com/Inventsable/starlette#readme"
+}

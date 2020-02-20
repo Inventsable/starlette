@@ -1,0 +1,346 @@
+[
+    {
+        "title": "color-header-border",
+        "delta": -17
+    },
+    {
+        "title": "color-header",
+        "delta": -12
+    },
+    {
+        "title": "radius-scrollbar-thumb",
+        "value": "20px"
+    },
+    {
+        "title": "width-scrollbar-track",
+        "value": "20px"
+    },
+    {
+        "title": "color-tooltip-border",
+        "delta": "+68"
+    },
+    {
+        "title": "color-scrollbar-thumb-hover",
+        "delta": "+34"
+    },
+    {
+        "title": "color-scrollbar-thumb",
+        "delta": "+13"
+    },
+    {
+        "title": "color-scrollbar-arrow",
+        "delta": "+64"
+    },
+    {
+        "title": "color-scrollbar",
+        "delta": -8
+    },
+    {
+        "title": "color-checkbox-disabled",
+        "delta": "+34"
+    },
+    {
+        "title": "color-checkbox-hover",
+        "delta": "+154"
+    },
+    {
+        "title": "color-checkbox",
+        "delta": "+101"
+    },
+    {
+        "title": "color-dropdown-item-selected",
+        "hex": "#519dd6"
+    },
+    {
+        "title": "color-dropdown-item",
+        "delta": 0
+    },
+    {
+        "title": "color-dropdown-item-hover",
+        "delta": "+13"
+    },
+    {
+        "title": "color-dropdown-border",
+        "delta": "+8"
+    },
+    {
+        "title": "color-dropdown-hover",
+        "delta": "+8"
+    },
+    {
+        "title": "color-dropdown-active",
+        "delta": -20
+    },
+    {
+        "title": "color-dropdown",
+        "delta": -12
+    },
+    {
+        "title": "color-input-focus-text",
+        "delta": -8
+    },
+    {
+        "title": "color-input-focus-border",
+        "hex": "#5b9bd3"
+    },
+    {
+        "title": "color-input-focus",
+        "hex": "#ffffff"
+    },
+    {
+        "title": "color-input-text",
+        "delta": "+154"
+    },
+    {
+        "title": "color-input-border",
+        "delta": "+8"
+    },
+    {
+        "title": "color-input",
+        "delta": -12
+    },
+    {
+        "title": "color-btn-toolbar-hover-border",
+        "delta": "+25"
+    },
+    {
+        "title": "color-btn-toolbar-hover",
+        "delta": -9
+    },
+    {
+        "title": "color-btn-toolbar-active-border",
+        "delta": "+13"
+    },
+    {
+        "title": "color-btn-toolbar-active",
+        "delta": -19
+    },
+    {
+        "title": "color-btn-icon-hover-border",
+        "delta": "+25"
+    },
+    {
+        "title": "color-btn-icon-hover",
+        "delta": "+13"
+    },
+    {
+        "title": "color-btn-icon-active-border",
+        "delta": "+25"
+    },
+    {
+        "title": "color-btn-icon-active",
+        "delta": -4
+    },
+    {
+        "title": "color-btn-pill-border",
+        "delta": "+154"
+    },
+    {
+        "title": "color-btn-pill-active",
+        "delta": "+77"
+    },
+    {
+        "title": "color-btn-pill-hover",
+        "delta": "+154"
+    },
+    {
+        "title": "color-btn-primary-text",
+        "hex": "#ffffff"
+    },
+    {
+        "title": "color-btn-disabled-text",
+        "delta": "+34"
+    },
+    {
+        "title": "color-btn-active",
+        "delta": -19
+    },
+    {
+        "title": "color-btn-disabled",
+        "delta": "+8"
+    },
+    {
+        "title": "color-btn-primary",
+        "hex": "#5b9bd3"
+    },
+    {
+        "title": "color-btn-border",
+        "delta": "+34"
+    },
+    {
+        "title": "color-btn-hover",
+        "delta": "+13"
+    },
+    {
+        "title": "color-btn-default",
+        "delta": 0
+    },
+    {
+        "title": "color-divider",
+        "delta": -8
+    },
+    {
+        "title": "color-selection",
+        "hex": "#66a9f1"
+    },
+    {
+        "title": "color-icon",
+        "delta": "+133"
+    },
+    {
+        "title": "color-text-label",
+        "delta": "+101"
+    },
+    {
+        "title": "color-default",
+        "delta": "+154"
+    },
+    {
+        "title": "color-bg",
+        "delta": 0
+    },
+    {
+        "title": "button",
+        "delta": "+8"
+    },
+    {
+        "title": "button-color",
+        "delta": "+154"
+    },
+    {
+        "title": "button-hover",
+        "delta": "+25"
+    },
+    {
+        "title": "button-active",
+        "delta": "+34"
+    },
+    {
+        "title": "button-filled",
+        "delta": "+34"
+    },
+    {
+        "title": "button-filled-hover",
+        "delta": -19
+    },
+    {
+        "title": "button-filled-hover-border",
+        "delta": "+154"
+    },
+    {
+        "title": "button-filled-active",
+        "delta": "+154"
+    },
+    {
+        "title": "button-primary",
+        "delta": "+154"
+    },
+    {
+        "title": "button-primary-border",
+        "delta": "+154"
+    },
+    {
+        "title": "button-primary-text",
+        "delta": "+154"
+    },
+    {
+        "title": "button-primary-text-active",
+        "delta": 0
+    },
+    {
+        "title": "button-flat-hover",
+        "delta": "+8"
+    },
+    {
+        "title": "button-flat-hover-border",
+        "delta": "+25"
+    },
+    {
+        "title": "button-flat-active",
+        "delta": "+34"
+    },
+    {
+        "title": "button-flat-active-border",
+        "delta": "+34"
+    },
+    {
+        "title": "tooltip-bg",
+        "delta": "+34"
+    },
+    {
+        "title": "tooltip-color",
+        "hex": "#e6e6e6"
+    },
+    {
+        "title": "divider-dark",
+        "delta": "+13"
+    },
+    {
+        "title": "divider-light",
+        "delta": -8
+    },
+    {
+        "title": "dropdown-color",
+        "hex": "#ffffff"
+    },
+    {
+        "title": "dropdown-border",
+        "delta": "+154"
+    },
+    {
+        "title": "dropdown-bg",
+        "delta": "+8"
+    },
+    {
+        "title": "dropdown-menu-bg",
+        "hex": "#f3f3f3"
+    },
+    {
+        "title": "dropdown-menu-color",
+        "hex": "#111"
+    },
+    {
+        "title": "dropdown-scrollbar-bg",
+        "hex": "#f3f3f3"
+    },
+    {
+        "title": "dropdown-scrollbar-thumb",
+        "hex": "#cecece"
+    },
+    {
+        "title": "dropdown-scrollbar-thumb-hover",
+        "hex": "#bdbdbdb"
+    },
+    {
+        "title": "dropzone-active",
+        "hex": "#66a9f1"
+    },
+    {
+        "title": "fold-border",
+        "delta": -16
+    },
+    {
+        "title": "default-color",
+        "delta": "+154"
+    },
+    {
+        "title": "tabs-active",
+        "hex": "#66a9f1"
+    },
+    {
+        "title": "tabs-idle",
+        "delta": "+26"
+    },
+    {
+        "title": "tabs-idle-hover",
+        "delta": "+101"
+    },
+    {
+        "title": "dropdown-menu-border",
+        "value": "rgba(0, 0, 0, 0.05)"
+    },
+    {
+        "title": "fold-border-width",
+        "value": "2px"
+    }
+]
