@@ -29,7 +29,6 @@ let starlette;
 export default starlette = {
 	currentTheme: [],
 	loadThemes() {
-		console.log('LOADING THEMES')
 		themes["FLPRdarkest"] = FLPRdarkest;
 		themes["FLPRdark"] = FLPRdark;
 		themes["FLPRlight"] = FLPRlight;
@@ -181,7 +180,6 @@ export default starlette = {
 		});
 	},
 	init() {
-		console.log('INIT')
 		this.loadThemes();
 		if (window.__adobe_cep__) {
 			window.__adobe_cep__.addEventListener(
@@ -192,7 +190,6 @@ export default starlette = {
 		}
 	},
 	appThemeChanged() {
-		console.log('THEME CHANGE?')
 		this.currentTheme = [];
 		let appName = getAppName();
 		let panelBG = getPanelBG();
