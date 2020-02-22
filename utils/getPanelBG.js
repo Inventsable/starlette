@@ -14,55 +14,63 @@ export default function getPanelBG() {
 			// result = getFLPRTheme(true);
 
 			let bg = JSON.parse(window.__adobe_cep__.getHostEnvironment())
-				.appSkinInfo.panelBackgroundColor.color;
-			let isActive = window.localStorage.getItem("starletteActive");
+				.appSkinInfo.panelBackgroundColor.color.red;
 			let lastTheme = window.localStorage.getItem("activeTheme");
-			let currentBG = window
-				.getComputedStyle(document.documentElement)
-				.getPropertyValue("--color-bg");
-			isActive = isActive ? JSON.parse(isActive) : null;
+			let isDark = bg < 200;
+			const data = {
+				darkest: [34, 34, 34],
+				dark: [54, 54, 54],
+				light: [245, 245, 245],
+				lightest: [255, 255, 255]
+			};
+			return data[lastTheme];
 
-			const alpha = JSON.parse(window.__adobe_cep__.getHostEnvironment())
-				.appSkinInfo.panelBackgroundColor.color;
+			// let currentBG = window
+			// 	.getComputedStyle(document.documentElement)
+			// 	.getPropertyValue("--color-bg");
+			// isActive = isActive ? JSON.parse(isActive) : null;
 
-			let target = [alpha.red, alpha.green, alpha.blue].map(col => {
-				return col - 35;
-			});
+			// const alpha = JSON.parse(window.__adobe_cep__.getHostEnvironment())
+			// 	.appSkinInfo.panelBackgroundColor.color;
 
-			let lightTarget = [alpha.red, alpha.green, alpha.blue].map(col => {
-				return 255;
-			});
-			const hex = rgbToHex(target);
-			const lightHex = rgbToHex(lightTarget);
+			// let target = [alpha.red, alpha.green, alpha.blue].map(col => {
+			// 	return col - 35;
+			// });
 
-			const isDark = bg.red < 200;
+			// let lightTarget = [alpha.red, alpha.green, alpha.blue].map(col => {
+			// 	return 255;
+			// });
+			// const hex = rgbToHex(target);
+			// const lightHex = rgbToHex(lightTarget);
 
-			if (currentBG == hex && isDark) {
-				console.log("Attempt smart switch");
-				result = currentBG == "#1e1e1e" ? [54, 54, 54] : [34, 34, 34];
-				/*
-					UNCOMMENT FOR AUTOSWITCH
+			// const isDark = bg.red < 200;
 
-				*/
-				//  else if (
-				// 	hex == "#afafaf" &&
-				// 	!isDark &&
-				// 	(currentBG == "#ffffff" || currentBG == "#f5f5f5")
-				// ) {
-				// 	console.log("MATCHING LIGHT", currentBG);
-				// 	result =
-				// 		currentBG == "#afafaf" ? [245, 245, 245] : [255, 255, 255];
-				// 	console.log(currentBG);
-				// 	if (currentBG == "#ffffff")
-				// 		document.documentElement.style.setProperty(
-				// 			`--color-bg`,
-				// 			"#f5f5f5"
-				// 		);
-			} else {
-				if ((lastTheme == "dark" || lastTheme == "light") && !isActive)
-					result = bg.red > 200 ? [245, 245, 245] : [54, 54, 54];
-				else result = bg.red > 200 ? [255, 255, 255] : [34, 34, 34];
-			}
+			// if (currentBG == hex && isDark) {
+			// 	console.log("Attempt smart switch");
+			// 	result = currentBG == "#1e1e1e" ? [54, 54, 54] : [34, 34, 34];
+			// 	/*
+			// 		UNCOMMENT FOR AUTOSWITCH
+
+			// 	*/
+			// 	//  else if (
+			// 	// 	hex == "#afafaf" &&
+			// 	// 	!isDark &&
+			// 	// 	(currentBG == "#ffffff" || currentBG == "#f5f5f5")
+			// 	// ) {
+			// 	// 	console.log("MATCHING LIGHT", currentBG);
+			// 	// 	result =
+			// 	// 		currentBG == "#afafaf" ? [245, 245, 245] : [255, 255, 255];
+			// 	// 	console.log(currentBG);
+			// 	// 	if (currentBG == "#ffffff")
+			// 	// 		document.documentElement.style.setProperty(
+			// 	// 			`--color-bg`,
+			// 	// 			"#f5f5f5"
+			// 	// 		);
+			// } else {
+			// 	if ((lastTheme == "dark" || lastTheme == "light") && !isActive)
+			// 		result = bg.red > 200 ? [245, 245, 245] : [54, 54, 54];
+			// 	else result = bg.red > 200 ? [255, 255, 255] : [34, 34, 34];
+			// }
 		}
 
 		return result;

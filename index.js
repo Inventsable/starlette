@@ -143,6 +143,27 @@ export default starlette = {
 			setCSS(cssVar.title, getValue(cssVar, panelBG));
 		});
 	},
+	switch() {
+		const appName = getAppName();
+		if (!/FLPR/.test(appName)) return null;
+		if (!window.__adobe_cep__) return null;
+		let isDark =
+			JSON.parse(window.__adobe_cep__.getHostEnvironment()).appSkinInfo
+				.panelBackgroundColor.color.red < 200;
+		let activeTheme = window.localStorage.getItem("activeTheme");
+		if (!activeTheme) activeTheme = isDark ? "darkest" : "lightest";
+
+		if (!isDark && /dark/.test(activeTheme)) {
+			activeTheme = activeTheme.replace("dark", "light");
+		} else if (isDark && /light/.test(activeTheme)) {
+			activeTheme = activeTheme.replace("light", "dark");
+		}
+		let switcheroo = /est/.test(activeTheme)
+			? activeTheme.replace("est", "")
+			: activeTheme + "est";
+		window.localStorage.setItem("activeTheme", switcheroo);
+		this.initAs("FLPR", switcheroo);
+	},
 	initAs(appName, theme, gradientvalue = null) {
 		this.loadThemes();
 		// window.addEventListener("message", this.parseTheme);
@@ -174,7 +195,6 @@ export default starlette = {
 		if (appName == "FLPR" && theme == "lightest") {
 			panelBG = [255, 255, 255];
 		}
-		console.log(appName, theme, currentTheme)
 		currentTheme.forEach(cssVar => {
 			setCSS(cssVar.title, getValue(cssVar, panelBG));
 		});
@@ -186,15 +206,33 @@ export default starlette = {
 				"com.adobe.csxs.events.ThemeColorChanged",
 				this.appThemeChanged
 			);
-			this.appThemeChanged();
+			if (getAppName() !== "FLPR") this.appThemeChanged();
+			else if (window.localStorage.getItem("activeTheme")) {
+				this.initAs("FLPR", window.localStorage.getItem("activeTheme"));
+			} else {
+				this.appThemeChanged();
+			}
 		}
 	},
 	appThemeChanged() {
 		this.currentTheme = [];
 		let appName = getAppName();
 		let panelBG = getPanelBG();
-		// let theme = /FLPR/.test(appName) ? getFLPRTheme() : getAppTheme();
 		let theme = getAppTheme();
+		if ("FLPR" == appName) {
+			let bg = JSON.parse(window.__adobe_cep__.getHostEnvironment())
+				.appSkinInfo.panelBackgroundColor.color.red;
+			let isDark = bg < 200;
+			theme = isDark ? "darkest" : "lightest";
+			let data = {
+				darkest: [34, 34, 34],
+				dark: [54, 54, 54],
+				light: [245, 245, 245],
+				lightest: [255, 255, 255]
+			};
+			panelBG = data[theme];
+			window.localStorage.setItem("activeTheme", theme);
+		}
 		let currentTheme = themes[appName + theme];
 		currentTheme.forEach(cssVar => {
 			setCSS(cssVar.title, getValue(cssVar, panelBG));

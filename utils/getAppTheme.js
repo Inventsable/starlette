@@ -6,7 +6,9 @@ export default function getAppTheme() {
 		const alpha = JSON.parse(window.__adobe_cep__.getHostEnvironment())
 			.appSkinInfo.panelBackgroundColor.color.red;
 		if (/FLPR/i.test(appName)) {
-			if (
+			if (window.localStorage.getItem("activeTheme"))
+				return window.localStorage.getItem("activeTheme");
+			else if (
 				alpha > 200 &&
 				window
 					.getComputedStyle(document.documentElement)
