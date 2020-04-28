@@ -74,10 +74,10 @@ export default starlette = {
 				!gradientvalue || gradientvalue == 0
 					? [35, 35, 35]
 					: [
-							Math.floor((gradientvalue / 100) * 48 + 35),
-							Math.floor((gradientvalue / 100) * 48 + 35),
-							Math.floor((gradientvalue / 100) * 48 + 35)
-					  ];
+						Math.floor((gradientvalue / 100) * 48 + 35),
+						Math.floor((gradientvalue / 100) * 48 + 35),
+						Math.floor((gradientvalue / 100) * 48 + 35)
+					];
 		}
 		return getValue(
 			currentTheme.find(item => {
@@ -111,10 +111,10 @@ export default starlette = {
 				!gradientvalue || gradientvalue == 0
 					? [35, 35, 35]
 					: [
-							Math.floor((gradientvalue / 100) * 48 + 35),
-							Math.floor((gradientvalue / 100) * 48 + 35),
-							Math.floor((gradientvalue / 100) * 48 + 35)
-					  ];
+						Math.floor((gradientvalue / 100) * 48 + 35),
+						Math.floor((gradientvalue / 100) * 48 + 35),
+						Math.floor((gradientvalue / 100) * 48 + 35)
+					];
 		}
 		let currentTheme;
 		if (/ILST|IDSN|PHXS|FLPR/i.test(str)) {
@@ -134,10 +134,10 @@ export default starlette = {
 			!val || val == 0
 				? [35, 35, 35]
 				: [
-						Math.floor((val / 100) * 48 + 35),
-						Math.floor((val / 100) * 48 + 35),
-						Math.floor((val / 100) * 48 + 35)
-				  ];
+					Math.floor((val / 100) * 48 + 35),
+					Math.floor((val / 100) * 48 + 35),
+					Math.floor((val / 100) * 48 + 35)
+				];
 		let currentTheme = themes[appName + theme];
 		currentTheme.forEach(cssVar => {
 			setCSS(cssVar.title, getValue(cssVar, panelBG));
@@ -168,7 +168,7 @@ export default starlette = {
 		this.loadThemes();
 		// window.addEventListener("message", this.parseTheme);
 		let panelBG;
-		console.log(`Initializing starlette as ${appName}: ${theme}`);
+		// console.log(`Initializing starlette as ${appName}: ${theme}`);
 		if (/ILST|IDSN|PHXS/i.test(appName)) {
 			if (/darkest/i.test(theme)) panelBG = [50, 50, 50];
 			else if (/dark$/i.test(theme)) panelBG = [83, 83, 83];
@@ -184,10 +184,10 @@ export default starlette = {
 				!gradientvalue || gradientvalue == 0
 					? [35, 35, 35]
 					: [
-							Math.floor((gradientvalue / 100) * 48 + 35),
-							Math.floor((gradientvalue / 100) * 48 + 35),
-							Math.floor((gradientvalue / 100) * 48 + 35)
-					  ];
+						Math.floor((gradientvalue / 100) * 48 + 35),
+						Math.floor((gradientvalue / 100) * 48 + 35),
+						Math.floor((gradientvalue / 100) * 48 + 35)
+					];
 		}
 		let currentTheme = themes[appName + theme];
 		//
@@ -266,19 +266,19 @@ export default starlette = {
 				if (item.hex || item.delta) {
 					line = `| --${
 						item.title
-					} | ![${darkest}](https://placehold.it/15/${darkest.replace(
-						"#",
-						""
-					)}/ffffff?text=+) \`${darkest}\`  | ![${dark}](https://placehold.it/15/${dark.replace(
-						"#",
-						""
-					)}/ffffff?text=+) \`${dark}\`  | ![${light}](https://placehold.it/15/${light.replace(
-						"#",
-						""
-					)}/ffffff?text=+) \`${light}\`  | ![${lightest}](https://placehold.it/15/${lightest.replace(
-						"#",
-						""
-					)}/ffffff?text=+) \`${lightest}\` |`;
+						} | ![${darkest}](https://placehold.it/15/${darkest.replace(
+							"#",
+							""
+						)}/ffffff?text=+) \`${darkest}\`  | ![${dark}](https://placehold.it/15/${dark.replace(
+							"#",
+							""
+						)}/ffffff?text=+) \`${dark}\`  | ![${light}](https://placehold.it/15/${light.replace(
+							"#",
+							""
+						)}/ffffff?text=+) \`${light}\`  | ![${lightest}](https://placehold.it/15/${lightest.replace(
+							"#",
+							""
+						)}/ffffff?text=+) \`${lightest}\` |`;
 					mirror.push(line);
 				}
 			});
@@ -305,16 +305,16 @@ export default starlette = {
 				if (item.hex || item.delta) {
 					line = `| --${
 						item.title
-					} | ![${darkest}](https://placehold.it/15/${darkest.replace(
-						"#",
-						""
-					)}/ffffff?text=+) \`${darkest}\`  | ![${mid}](https://placehold.it/15/${mid.replace(
-						"#",
-						""
-					)}/ffffff?text=+) \`${mid}\`  | ![${lightest}](https://placehold.it/15/${lightest.replace(
-						"#",
-						""
-					)}/ffffff?text=+) \`${lightest}\` |`;
+						} | ![${darkest}](https://placehold.it/15/${darkest.replace(
+							"#",
+							""
+						)}/ffffff?text=+) \`${darkest}\`  | ![${mid}](https://placehold.it/15/${mid.replace(
+							"#",
+							""
+						)}/ffffff?text=+) \`${mid}\`  | ![${lightest}](https://placehold.it/15/${lightest.replace(
+							"#",
+							""
+						)}/ffffff?text=+) \`${lightest}\` |`;
 					mirror.push(line);
 				}
 			});
