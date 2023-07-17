@@ -29,9 +29,9 @@ import PPROgradient from "./stylesheets/PPRO/gradient.json";
 import AUDTgradient from "./stylesheets/AUDT/gradient.json";
 
 let themes = {};
-let starlette;
-export default starlette = {
-  currentTheme: [],
+let prefix = "";
+export default new class starlette {
+  currentTheme: any[] = [];
   loadThemes() {
     themes["FLPRdarkest"] = FLPRdarkest;
     themes["FLPRdark"] = FLPRdark;
@@ -56,7 +56,7 @@ export default starlette = {
     themes["IDSNlight"] = IDSNlight;
     themes["IDSNlightest"] = IDSNlightest;
     themes["AUDTgradient"] = AUDTgradient;
-  },
+  }
   getColorAs(name, appName, theme = null, gradientvalue = null) {
     if (!themes["ILSTdarkest"]) this.loadThemes();
     let currentTheme, panelBG;
@@ -82,10 +82,10 @@ export default starlette = {
         !gradientvalue || gradientvalue == 0
           ? [35, 35, 35]
           : [
-              Math.floor((gradientvalue / 100) * 48 + 35),
-              Math.floor((gradientvalue / 100) * 48 + 35),
-              Math.floor((gradientvalue / 100) * 48 + 35),
-            ];
+            Math.floor((gradientvalue / 100) * 48 + 35),
+            Math.floor((gradientvalue / 100) * 48 + 35),
+            Math.floor((gradientvalue / 100) * 48 + 35),
+          ];
     }
     return getValue(
       currentTheme.find((item) => {
@@ -93,7 +93,7 @@ export default starlette = {
       }),
       panelBG
     );
-  },
+  }
   parseTheme(str) {
     str = str.data || str;
     let panelBG, gradientvalue, theme;
@@ -119,10 +119,10 @@ export default starlette = {
         !gradientvalue || gradientvalue == 0
           ? [35, 35, 35]
           : [
-              Math.floor((gradientvalue / 100) * 48 + 35),
-              Math.floor((gradientvalue / 100) * 48 + 35),
-              Math.floor((gradientvalue / 100) * 48 + 35),
-            ];
+            Math.floor((gradientvalue / 100) * 48 + 35),
+            Math.floor((gradientvalue / 100) * 48 + 35),
+            Math.floor((gradientvalue / 100) * 48 + 35),
+          ];
     }
     let currentTheme;
     if (/ILST|IDSN|PHXS|FLPR|DRWV/i.test(str)) {
@@ -134,22 +134,22 @@ export default starlette = {
     currentTheme.forEach((cssVar) => {
       setCSS(cssVar.title, getValue(cssVar, panelBG));
     });
-  },
+  }
   updateFakeTheme(appName, theme, val) {
     val = val ? (val > 100 ? 100 : val < 0 ? 0 : val) : 0;
     let panelBG =
       !val || val == 0
         ? [35, 35, 35]
         : [
-            Math.floor((val / 100) * 48 + 35),
-            Math.floor((val / 100) * 48 + 35),
-            Math.floor((val / 100) * 48 + 35),
-          ];
+          Math.floor((val / 100) * 48 + 35),
+          Math.floor((val / 100) * 48 + 35),
+          Math.floor((val / 100) * 48 + 35),
+        ];
     let currentTheme = themes[appName + theme];
     currentTheme.forEach((cssVar) => {
       setCSS(cssVar.title, getValue(cssVar, panelBG));
     });
-  },
+  }
   switch() {
     const appName = getAppName();
     if (!/FLPR/.test(appName)) return null;
@@ -170,7 +170,7 @@ export default starlette = {
       : activeTheme + "est";
     window.localStorage.setItem("activeTheme", switcheroo);
     this.initAs("FLPR", switcheroo);
-  },
+  }
   initAs(appName, theme, gradientvalue = null) {
     this.loadThemes();
     // window.addEventListener("message", this.parseTheme);
@@ -191,10 +191,10 @@ export default starlette = {
         !gradientvalue || gradientvalue == 0
           ? [35, 35, 35]
           : [
-              Math.floor((gradientvalue / 100) * 48 + 35),
-              Math.floor((gradientvalue / 100) * 48 + 35),
-              Math.floor((gradientvalue / 100) * 48 + 35),
-            ];
+            Math.floor((gradientvalue / 100) * 48 + 35),
+            Math.floor((gradientvalue / 100) * 48 + 35),
+            Math.floor((gradientvalue / 100) * 48 + 35),
+          ];
     }
     let currentTheme = themes[appName + theme];
     //
@@ -205,7 +205,7 @@ export default starlette = {
     currentTheme.forEach((cssVar) => {
       setCSS(cssVar.title, getValue(cssVar, panelBG));
     });
-  },
+  }
   init() {
     this.loadThemes();
     if (window.__adobe_cep__) {
@@ -220,7 +220,7 @@ export default starlette = {
         this.appThemeChanged();
       }
     }
-  },
+  }
   appThemeChanged() {
     this.currentTheme = [];
     let appName = getAppName();
@@ -244,7 +244,7 @@ export default starlette = {
     currentTheme.forEach((cssVar) => {
       setCSS(cssVar.title, getValue(cssVar, panelBG));
     });
-  },
+  }
   buildTableForApp(appName) {
     let mirror = [];
     if (/ILST|PHXS|IDSN/.test(appName)) {
@@ -271,21 +271,20 @@ export default starlette = {
         );
         let line;
         if (item.hex || item.delta) {
-          line = `| --${
-            item.title
-          } | ![${darkest}](https://placehold.it/15/${darkest.replace(
-            "#",
-            ""
-          )}/ffffff?text=+) \`${darkest}\`  | ![${dark}](https://placehold.it/15/${dark.replace(
-            "#",
-            ""
-          )}/ffffff?text=+) \`${dark}\`  | ![${light}](https://placehold.it/15/${light.replace(
-            "#",
-            ""
-          )}/ffffff?text=+) \`${light}\`  | ![${lightest}](https://placehold.it/15/${lightest.replace(
-            "#",
-            ""
-          )}/ffffff?text=+) \`${lightest}\` |`;
+          line = `| --${item.title
+            } | ![${darkest}](https://placehold.it/15/${darkest.replace(
+              "#",
+              ""
+            )}/ffffff?text=+) \`${darkest}\`  | ![${dark}](https://placehold.it/15/${dark.replace(
+              "#",
+              ""
+            )}/ffffff?text=+) \`${dark}\`  | ![${light}](https://placehold.it/15/${light.replace(
+              "#",
+              ""
+            )}/ffffff?text=+) \`${light}\`  | ![${lightest}](https://placehold.it/15/${lightest.replace(
+              "#",
+              ""
+            )}/ffffff?text=+) \`${lightest}\` |`;
           mirror.push(line);
         }
       });
@@ -310,24 +309,29 @@ export default starlette = {
         ]);
         let line;
         if (item.hex || item.delta) {
-          line = `| --${
-            item.title
-          } | ![${darkest}](https://placehold.it/15/${darkest.replace(
-            "#",
-            ""
-          )}/ffffff?text=+) \`${darkest}\`  | ![${mid}](https://placehold.it/15/${mid.replace(
-            "#",
-            ""
-          )}/ffffff?text=+) \`${mid}\`  | ![${lightest}](https://placehold.it/15/${lightest.replace(
-            "#",
-            ""
-          )}/ffffff?text=+) \`${lightest}\` |`;
+          line = `| --${item.title
+            } | ![${darkest}](https://placehold.it/15/${darkest.replace(
+              "#",
+              ""
+            )}/ffffff?text=+) \`${darkest}\`  | ![${mid}](https://placehold.it/15/${mid.replace(
+              "#",
+              ""
+            )}/ffffff?text=+) \`${mid}\`  | ![${lightest}](https://placehold.it/15/${lightest.replace(
+              "#",
+              ""
+            )}/ffffff?text=+) \`${lightest}\` |`;
           mirror.push(line);
         }
       });
     }
     return mirror;
-  },
+  }
+  setPrefix(newPrefix = "") {
+    prefix = newPrefix || "";
+  }
+  clearPrefix() {
+    prefix = "";
+  }
 };
 
 function getValue(item, color) {
@@ -340,13 +344,14 @@ function getValue(item, color) {
     return item.value;
   }
 }
-
 function getCSS(prop) {
+  prop = `${prefix}${prop}`;
   return window
     .getComputedStyle(document.documentElement)
     .getPropertyValue(`${/^\-\-/.test(prop) ? prop : "--" + prop}`);
 }
 function setCSS(prop, data) {
+  prop = `${prefix}${prop}`;
   document.documentElement.style.setProperty(
     `${/^--/.test(prop) ? prop : "--" + prop}`,
     data

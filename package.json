@@ -2,7 +2,7 @@
   "name": "starlette",
   "version": "1.0.7",
   "description": "Dynamic CSS variables of all conceivable UI colors for any Adobe application",
-  "main": "index.js",
+  "main": "index.ts",
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
