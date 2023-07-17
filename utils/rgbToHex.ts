@@ -2,10 +2,10 @@
 export default function rgbToHex(rgbArray) {
 	!(rgbArray instanceof Array)
 		? [
-				rgbArray.r || rgbArray.red,
-				rgbArray.g || rgbArray.green,
-				rgbArray.b || rgbArray.blue
-		  ]
+			rgbArray.r || rgbArray.red,
+			rgbArray.g || rgbArray.green,
+			rgbArray.b || rgbArray.blue
+		]
 		: rgbArray;
 	while (rgbArray.length > 3) rgbArray.pop();
 	return (

@@ -39,7 +39,7 @@ export default function getFLPRTheme(asArray = false) {
 		}
 	};
 
-	let thisTheme = null;
+	let thisTheme: string | null = null;
 	if (currentBG == hex && isDark) {
 		thisTheme =
 			currentBG == "#1e1e1e" || currentBG == "#1f1f1f"

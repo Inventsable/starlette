@@ -23,7 +23,7 @@ export default function getPanelBG() {
 				light: [245, 245, 245],
 				lightest: [255, 255, 255]
 			};
-			return data[lastTheme];
+			return data[String(lastTheme)];
 
 			// let currentBG = window
 			// 	.getComputedStyle(document.documentElement)

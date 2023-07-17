@@ -76,6 +76,32 @@ This gives you the freedom to write concise CSS with no need for any logic about
 
 This is the literal CSS from the screen capture above, located in UI Spy's components/preview/checkbox.vue file.
 
+### Optional Custom Prefix (Namespacing)
+To avoid overriding any existing CSS variables, you can set a custom prefix for all variables before calling `init()`
+
+```js
+...
+      starlette.setPrefix('myCustomPrefix-');
+      starlette.init();
+``````
+
+Now, all variables will be prefixed with `myCustomPrefix-`:
+
+```css
+.checkbox {
+  fill: var(--myCustomPrefix-color-checkbox);
+}
+
+.checkbox:hover {
+  fill: var(--myCustomPrefix-color-checkbox-hover);
+}
+.checkbox-disabled {
+  fill: var(--myCustomPrefix-color-checkbox-disabled);
+}
+
+```
+
+
 ---
 
 ## Stylesheets
