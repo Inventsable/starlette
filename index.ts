@@ -57,7 +57,7 @@ export default new class starlette {
     themes["IDSNlightest"] = IDSNlightest;
     themes["AUDTgradient"] = AUDTgradient;
   }
-  getColorAs(name, appName, theme = null, gradientvalue = null) {
+  getColorAs(name, appName, theme = "", gradientvalue = null) {
     if (!themes["ILSTdarkest"]) this.loadThemes();
     let currentTheme, panelBG;
     if (/ILST|IDSN|PHXS|DRWV/i.test(appName)) {
@@ -246,7 +246,7 @@ export default new class starlette {
     });
   }
   buildTableForApp(appName) {
-    let mirror = [];
+    let mirror: string[] = [];
     if (/ILST|PHXS|IDSN/.test(appName)) {
       let baseTheme = themes[appName + "darkest"].reverse();
       baseTheme.forEach((item, i) => {
@@ -269,7 +269,7 @@ export default new class starlette {
           }),
           [240, 240, 240]
         );
-        let line;
+        let line: string;
         if (item.hex || item.delta) {
           line = `| --${item.title
             } | ![${darkest}](https://placehold.it/15/${darkest.replace(

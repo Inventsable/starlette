@@ -11,6 +11,8 @@ declare global {
         };
         __adobe_cep__: {
             getHostEnvironment: Function;
+            addEventListener: Function;
+            dispatchEvent: Function;
         };
         localStorage: {
             getItem: Function;
